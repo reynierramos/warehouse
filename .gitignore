@@ -293,7 +293,3 @@ config.json
 .bowerrc
 Program.cs
 Warehouse/wwwroot/lib/*
-/Warehouse/Migrations
-/Warehouse/Warehouse.csproj
-/Warehouse/Startup.cs
-/Warehouse/bower.json
