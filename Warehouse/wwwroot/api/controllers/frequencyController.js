@@ -21,5 +21,25 @@
             .finally(function () {
 
             });
+
+        vm.newFrequency = {};
+
+        vm.Close = function () {
+            $("#freqModal").modal("hide");
+        };
+
+        vm.addFrequency = function () {
+            $http.post("/api/frequencies", vm.newFrequency)
+                .then(function (response) {
+                    //on success
+                    vm.frequencies.push(response.data);
+                    vm.newFrequency = {};
+                },
+                function (error) {
+                    //on failure
+                })
+                .finally(function () {
+                });
+        };
     }
 })();
