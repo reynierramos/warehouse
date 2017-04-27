@@ -1,30 +1,10 @@
-﻿/*(function () {
-    'use strict';
-
-    angular
-        .module('app')
-        .controller('frequencyController', frequencyController);
-
-    frequencyController.$inject = ['$location'];
-
-    function frequencyController($location) {*/
-/* jshint validthis:true */
-/* var vm = this;
- vm.title = 'frequencyController';
-
- activate();
-
- function activate() { }
-}
-})();*/
-
-//frequencyController.js
+﻿//frequencyController
 (function () {
     "use strict";
 
     angular
         .module("warehouse")
-        .module("frequencyController", frequencyController);
+        .controller("frequencyController", frequencyController);
 
     function frequencyController($http) {
         var vm = this;
@@ -38,7 +18,7 @@
             function (error) {
                 //on failure
             })
-            .finaly(function () {
+            .finally(function () {
 
             });
     }

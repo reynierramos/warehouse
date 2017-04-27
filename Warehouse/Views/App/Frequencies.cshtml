@@ -1,12 +1,34 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Frequencies";
 }
 @section Scripts{
     <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/api/app.js"></script>
+    <script src="~/api/controllers/frequencyController.js"></script>
 }
 
-<div class="row" ng-app="frequencies">
-    <div ng-controller="">
-
+<div class="row" ng-app="warehouse">
+    <div ng-controller="frequencyController as vm" class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Frequencies
+            </header>
+            <div class="panel-body">
+                <table class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <td>Value</td>
+                            <td>Date Create</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="frequency in vm.frequencies">
+                            <td>{{frequency.value}}</td>
+                            <td>{{frequency.dateCreate | date:"dd-MM-yyyy"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
 </div>
