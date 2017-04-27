@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/boostrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-reset.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+</head>
+<body>
+    <section id="container">
+        <!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
+
+                <a href="index.html" class="logo">
+                    @*<img src="images/logo.png" alt="">*@
+                </a>
+                <div class="sidebar-toggle-box">
+                    <div class="fa fa-bars"></div>
+                </div>
+            </div>
+            <!--logo end-->
+
+            <div class="top-nav clearfix">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder=" Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle icon-user" href="#">
+                            <!--<img alt="" src="images/avatar1_small.jpg">-->
+                            <i class="fa fa-user"></i>
+                            <span class="username">John Doe</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                    <li>
+                        <div class="toggle-right-box">
+                            <div class="fa fa-bars"></div>
+                        </div>
+                    </li>
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->            <div class="leftside-navigation">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a asp-controller="App" asp-action="Frequencies">
+                                <i class="fa fa-heartbeat"></i>
+                                <span>Frequencies</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!-- page start-->
+                @RenderBody()
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+    </section>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/boostrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/scripts.js"></script>
+    @RenderSection("scripts", false);
+</body>
+</html>

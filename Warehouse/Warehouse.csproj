@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\api\app.js" />
+    <Content Include="wwwroot\api\controllers\frequencyController.js" />
+    <Content Include="wwwroot\api\views\frequency\frequencyView.html" />
+    <Content Include="wwwroot\assets\css\bootstrap-reset.css" />
+    <Content Include="wwwroot\assets\css\style-responsive.css" />
+    <Content Include="wwwroot\assets\css\style.css" />
+    <Content Include="wwwroot\assets\images\nav-expand.png" />
+    <Content Include="wwwroot\assets\images\search-icon.png" />
+    <Content Include="wwwroot\assets\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="wwwroot\assets\js\jquery.nicescroll.js" />
+    <Content Include="wwwroot\assets\js\jquery.scrollTo.min.js" />
+    <Content Include="wwwroot\assets\js\scripts.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.1" />
+    <PackageReference Include="VisualStudio.gitignore" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>
