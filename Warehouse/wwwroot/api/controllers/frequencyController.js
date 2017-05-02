@@ -9,6 +9,8 @@
     function frequencyController($http) {
         var vm = this;
         vm.frequencies = [];
+        vm.errorMessage = "";
+        vm.isBusy = true;
 
         $http.get("/api/frequencies")
             .then(function (response) {
@@ -17,9 +19,10 @@
             },
             function (error) {
                 //on failure
+                vm.errorMessage = "Failed to load data: " + error;
             })
             .finally(function () {
-
+                vm.isBusy = false;
             });
 
         vm.newFrequency = {};
@@ -29,6 +32,7 @@
         };
 
         vm.addFrequency = function () {
+            vm.isBusy = true;
             $http.post("/api/frequencies", vm.newFrequency)
                 .then(function (response) {
                     //on success
@@ -37,9 +41,16 @@
                 },
                 function (error) {
                     //on failure
+                    vm.errorMessage = "Failed to save new Frequency";
                 })
                 .finally(function () {
+                    vm.isBusy = false;
                 });
         };
+
+        //$http.get("/api/frequencies", id)
+        //    .then(function (response) {
+        //        vm.frequencies.
+        //    })
     }
 })();

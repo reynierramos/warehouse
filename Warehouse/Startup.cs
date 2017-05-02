@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Warehouse.Models;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Serialization;
 
 namespace Warehouse
 {
@@ -32,7 +33,10 @@ namespace Warehouse
             services.AddSingleton(_config);
             services.AddDbContext<WarehouseContext>();
             services.AddScoped<IFrequencyRepository, FrequencyRepository>();
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(config =>
+                    config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver()
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
