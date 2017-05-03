@@ -1,23 +1,22 @@
 ﻿(function () {
     "use strict";
 
-    angular.module("warehouse", ["appControls", "ngRoute"])
-        .config(function ($routeProvider, $locationProvider) {
-            $routeProvider
-                .when("/", {
-                    controller: "frequencyController",
-                    controllerAs: "vm",
-                    templateUrl: "/api/views/frequency/frequenciesView.html"
-                });
+    angular.module("warehouse", ["ngRoute"])
+        .config(function ($routeProvider) {
+            $routeProvider.when("/", {
+                templateUrl: "/api/views/frequency/frequencyView.html",
+                controller: "frequencyController",
+                controllerAs: "vm"
+            });
 
-            //$routeProvider
-            //    .when("/frequencies", {
-            //        controller: "frequencyController",
-            //        controllerAs: "vm",
-            //        templateUrl: "/api/views/frequency/frequencyEdit.html"
-            //    });
+            $routeProvider.when("/frequency/:id", {
+                templateUrl: "/api/views/frequency/frequencyEdit.html",
+                controller: "frequencyController",
+                controllerAs: "vm"
+            });
+
+            //$routeProvider.when
 
             $routeProvider.otherwise({ redirectTo: "/" });
-            //$locationProvider.html5Mode(true);
         });
 })();

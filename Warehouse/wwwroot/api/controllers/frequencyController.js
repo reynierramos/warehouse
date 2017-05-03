@@ -6,7 +6,7 @@
         .module("warehouse")
         .controller("frequencyController", frequencyController);
 
-    function frequencyController($http) {
+    function frequencyController($http, $routeParams) {
         var vm = this;
         vm.frequencies = [];
         vm.errorMessage = "";
@@ -48,9 +48,36 @@
                 });
         };
 
-        //$http.get("/api/frequencies", id)
-        //    .then(function (response) {
-        //        vm.frequencies.
-        //    })
-    }
+        if ($routeParams.id) {
+            vm.id = $routeParams.id;
+            vm.frequency = {};
+
+            $http.get("/api/frequencies/" + vm.id)
+                .then(function (response) {
+                    //on success
+                    angular.copy(response.data, vm.frequency);
+                },
+                function (error) {
+                    //on failure
+                })
+                .finally(function () {
+                });
+        }
+
+        vm.updateFrequency = function () {
+            vm.editFrequency = {
+                "id": $routeParams.id,
+                "value": angular.element("#value").val()
+            };
+            $http.put("/api/frequencies/", vm.editFrequency)
+                .then(function (response) {
+                    $location.path("/");
+                },
+                function (error) {
+                    
+                })
+                .finally(function () {
+                });
+        }
+    };
 })();

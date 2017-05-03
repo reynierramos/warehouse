@@ -1,1 +1,64 @@
-﻿<div></div>
+﻿<div ng-controller="frequencyController as vm">
+    <div class="col-md-9">
+        <section class="panel">
+            <header class="panel-heading">
+                Frequencies
+            </header>
+            <div class="panel-body">
+                <table class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <td>Value</td>
+                            <td>Date Create</td>
+                            <td>Actions</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="frequency in vm.frequencies">
+                            <td>{{frequency.value}}</td>
+                            <td>{{frequency.dateCreate | date:"dd-MM-yyyy"}}</td>
+                            <td style="width: 25%;">
+                                <a ng-href="#!/frequency/{{frequency.id}}" class="btn btn-info"><i class="fa fa-edit"></i> Edit</a>
+                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-3">
+        <section class="panel">
+            <header class="panel-heading">
+                Options
+            </header>
+            <div class="panel-body">
+                <div>
+                    <a data-toggle="modal" data-target="#freqModal" class="btn btn-success"><i class="fa fa-plus"></i> Frequency</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="modal fade" id="freqModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">New Frequency</h4>
+                </div>
+                <div class="modal-body">
+                    <form novalidate name="newFrequencyForm" ng-submit="vm.addFrequency()">
+                        <div class="form-group">
+                            <label for="value">Value</label>
+                            <input class="form-control" type="text" name="value" id="value" ng-model="vm.newFrequency.value" />
+                        </div>
+                        <div class="form-group">
+                            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                            <input type="submit" class="btn btn-success" value="Add" ng-click="vm.Close()" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,25 @@
-﻿<div class="alert alert-danger">
-    aassasasas
+﻿<div ng-controller="frequencyController as vm">
+    <div class="col-md-9">
+        <section class="panel">
+            <header class="panel-heading">
+                Edit Frequency
+            </header>
+            <div class="panel-body">
+                <form novalidate name="editFrequencyForm" ng-submit="vm.updateFrequency()">
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input class="form-control" name="value" id="value" value="{{vm.frequency.value}}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Date Create</label>
+                        <div class="text-left">{{ vm.frequency.dateCreate | date:"dd-MM-yyyy" }}</div>
+                    </div>
+                    <div class="form-group">
+                        <a ng-href="#!/" class="btn btn-default">Back</a>
+                        <input type="submit" class="btn btn-info" value="Update" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
 </div>
