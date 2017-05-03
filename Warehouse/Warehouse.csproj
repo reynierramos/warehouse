@@ -7,6 +7,7 @@
   <ItemGroup>
     <Content Include="wwwroot\api\app.js" />
     <Content Include="wwwroot\api\controllers\frequencyController.js" />
+    <Content Include="wwwroot\api\views\frequency\frequencyEdit.html" />
     <Content Include="wwwroot\api\views\frequency\frequencyView.html" />
     <Content Include="wwwroot\assets\css\bootstrap-reset.css" />
     <Content Include="wwwroot\assets\css\style-responsive.css" />

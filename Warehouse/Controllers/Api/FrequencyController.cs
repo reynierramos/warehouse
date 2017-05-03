@@ -48,5 +48,15 @@ namespace Warehouse.Controllers.Api
             _repository.Add(frequency);
             return Created($"api/frequencies/{frequency.Value}", frequency);
         }
+
+        public IActionResult Update([FromBody]Frequency frequency)
+        {
+            if(frequency == null)
+            {
+                return BadRequest("Faile to Update the Frequency");
+            }
+            _repository.Update(frequency);
+            return Ok(frequency);
+        }
     }
 }
