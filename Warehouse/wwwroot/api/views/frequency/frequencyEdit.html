@@ -5,6 +5,7 @@
                 Edit Frequency
             </header>
             <div class="panel-body">
+                <wait-cursor display-when="vm.isBusy"></wait-cursor>
                 <form novalidate name="editFrequencyForm" ng-submit="vm.updateFrequency()">
                     <div class="form-group">
                         <label>Value</label>

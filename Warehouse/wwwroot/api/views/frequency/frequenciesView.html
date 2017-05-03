@@ -13,17 +13,17 @@
                 <table class="table table-responsive table-striped">
                     <thead>
                         <tr>
-                            <td>Valueqwqwqw</td>
+                            <td>Value</td>
                             <td>Date Create</td>
                             <td style="width: 25%;">Actions</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="frequency in vm.frequencies">
-                            <td>{{frequency.value}}asas</td>
+                            <td>{{frequency.value}}</td>
                             <td>{{frequency.dateCreate | date:"dd-MM-yyyy"}}</td>
-                            <td>
-                                <a href="/{{frequency.value}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                            <td style="width: 25%;">
+                                <a ng-href="#!/frequency/{{frequency.id}}" class="btn btn-info"><i class="fa fa-edit"></i> Edit</a>
                                 <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>

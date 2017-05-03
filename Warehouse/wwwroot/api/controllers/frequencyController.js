@@ -6,7 +6,7 @@
         .module("warehouse")
         .controller("frequencyController", frequencyController);
 
-    function frequencyController($http, $routeParams) {
+    function frequencyController($http, $routeParams, $location) {
         var vm = this;
         vm.frequencies = [];
         vm.errorMessage = "";
@@ -77,6 +77,7 @@
 
                 })
                 .finally(function () {
+                    vm.isBusy = false;
                 });
         }
     };

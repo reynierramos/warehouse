@@ -1,10 +1,10 @@
 ﻿(function () {
     "use strict";
 
-    angular.module("warehouse", ["ngRoute"])
+    angular.module("warehouse", ["ngRoute", "appControls"])
         .config(function ($routeProvider) {
             $routeProvider.when("/", {
-                templateUrl: "/api/views/frequency/frequencyView.html",
+                templateUrl: "/api/views/frequency/frequenciesView.html",
                 controller: "frequencyController",
                 controllerAs: "vm"
             });
