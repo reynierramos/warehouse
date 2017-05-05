@@ -2,7 +2,7 @@
     ViewBag.Title = "Frequency";
 }
 
-<div class="col-md-12">
+<div class="col-md-9">
     <section class="panel">
         <header class="panel-heading">
             Frequencies
@@ -27,7 +27,7 @@
                             <td>@frequency.Value</td>
                             <td>@frequency.DateCreate.ToString("dd/MM/yyyy")</td>
                             <td style="width: 25%;">
-                                <a href="#" class="btn btn-info"><i class="fa fa-edit"></i> Edit</a>
+                                <a asp-controller="Frequency" asp-action="Edit" asp-route-id="@frequency.Id" class="btn btn-info"><i class="fa fa-edit"></i> Edit</a>
                                 <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
@@ -36,4 +36,14 @@
             </table>
         </div>
     </section>
+</div>
+<div class="col-md-3">
+    <div class="panel">
+        <header class="panel-heading">
+            Options
+        </header>
+        <div class="panel-body">
+            <a class="btn btn-success" asp-controller="Frequency", asp-action="Create"><i class="fa fa-plus"></i> Frequency</a>
+        </div>
+    </div>
 </div>

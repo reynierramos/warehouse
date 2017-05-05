@@ -1,22 +1,22 @@
 ﻿@model Warehouse.Models.Frequency
 @{
-    ViewBag.Title = "Edit Frequency";
+    ViewBag.Title = "Create Frequency";
 }
-
 <div class="col-md-12">
     <section class="panel">
         <header class="panel-heading">
-            Edit Frequency
+            Create Frequency
         </header>
         <div class="panel-body">
-            <form method="put">
+            <form method="post">
                 <div class="form-group">
                     <label asp-for="Value"></label>
                     @Html.TextBoxFor(f => f.Value, new { @class = "form-control" })
+                    <span asp-validation-for="Value"></span>
                 </div>
                 <div class="form-group">
-                    <a role="button" class="btn btn-default" asp-controller="Frequency" asp-action="Index">Cancel</a>
-                    <input class="btn btn-info" type="submit" value="Update" />
+                    <a role="button" asp-controller="Frequency" asp-action="Index" class="btn btn-default">Back to the List</a>
+                    <input type="submit" class="btn btn-success" value="Add" /> 
                 </div>
             </form>
         </div>

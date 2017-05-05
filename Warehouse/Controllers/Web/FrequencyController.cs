@@ -31,7 +31,28 @@ namespace Warehouse.Controllers.Web
             }
         }
 
-        public IActionResult Frequency(string id)
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Frequency frequency)
+        {
+            if (ModelState.IsValid)
+            {
+                _repository.Add(frequency);
+                return RedirectToAction("Index", "Frequency");
+            }
+            else
+            {
+                return View(frequency);
+            }
+            //return BadRequest("Failed to create new Frequency");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(string id)
         {
             if (id == null)
             {
