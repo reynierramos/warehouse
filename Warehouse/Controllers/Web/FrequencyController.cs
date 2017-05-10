@@ -61,5 +61,27 @@ namespace Warehouse.Controllers.Web
             var data = _repository.Find(Convert.ToInt32(id));
             return View(data);
         }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var data = _repository.Find(id);
+            return View(data);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            try
+            {
+                _repository.Remove(id);
+                return RedirectToAction("Index", "Frequency");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

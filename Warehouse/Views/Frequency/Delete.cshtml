@@ -1,0 +1,23 @@
+﻿@model Warehouse.Models.Frequency
+@{
+    ViewBag.Title = "Delete Frequency";
+}
+
+<div class="col-md-12">
+    <section class="panel">
+        <header class="panel-heading">
+            Delete Frequency
+        </header>
+        <div class="panel-body">
+            <form method="post" asp-action="Delete">
+                <div class="alert alert-danger">
+                    <p>Are you sure you want to delete the Frequency: @Model.Value</p>
+                </div>
+                <div class="form-group">
+                    <a role="button" asp-controller="Frequency" asp-action="Index" class="btn btn-default">Back to the List</a>
+                    <input class="btn btn-danger" type="submit" value="Delete" />
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

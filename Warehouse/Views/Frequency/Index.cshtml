@@ -28,7 +28,7 @@
                             <td>@frequency.DateCreate.ToString("dd/MM/yyyy")</td>
                             <td style="width: 25%;">
                                 <a asp-controller="Frequency" asp-action="Edit" asp-route-id="@frequency.Id" class="btn btn-info"><i class="fa fa-edit"></i> Edit</a>
-                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                <a asp-controller="Frequency" asp-action="Delete" asp-route-id="@frequency.Id" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     }
